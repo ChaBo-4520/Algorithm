@@ -6,15 +6,15 @@
 
 <hr>
 
-<img src="./Pictures/COOK_IT_LOGO.jpg" alt="img" style=";margin-left :0;zoom:100%;" />
+<img src="./Pictures/COOK_IT_LOGO.jpg" alt="img" width = "20%" />
 
 #### 	[Cookit](./Projects/Cookit)
 
-<img src="./Pictures/BOORM_E_LOGO.png" alt="img" style=";margin-left :0;zoom:45%;" />
+<img src="./Pictures/BOORM_E_LOGO.png" alt="img" width = "20%" />
 
 #### [BOORM_E](./Projects/BOORM_E)
 
-<img src="./Pictures/Data_Village_LOGO.jpg" alt="img" style=";margin-left :0;zoom:20%;" />
+<img src="./Pictures/Data_Village_LOGO.jpg" alt="img" width = "30%" />
 
 #### [Data_Village](./Projects/Data_Village)
 
