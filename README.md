@@ -6,9 +6,9 @@
 
 <hr>
 
-#### 	[BOORM_E](./BOORM_E)
+#### 	[BOORM_E](./Projects/BOORM_E)
 
-#### 	[Cookit](./Cookit)
+#### 	[Cookit](./Projects/Cookit)
 
-#### 	[Data_Village](./Data_Village)
+#### 	[Data_Village](./Projects/Data_Village)
 
