@@ -1,13 +1,19 @@
 # 포트폴리오
 > 내 역량을 보여줄 수 있는 다양한 자료들
 
+---
+
 ### [알고리즘 문제 풀이](./Algorithm)
 
 <hr>
+### [개인 스터디](./Study/)
+
+---
 
 ### 프로젝트 수행 목록
 
-<hr>
+---
+
 
 #### [Cookit](./Projects/Cookit)
 
@@ -21,5 +27,5 @@
 
 <img src="./Pictures/Data_Village_LOGO.jpg" alt="img" width = "30%" />
 
-### [개인 스터디](./Study/)
+
 
