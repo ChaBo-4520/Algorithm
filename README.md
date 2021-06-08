@@ -20,3 +20,6 @@
 #### [Data_Village](./Projects/Data_Village)
 
 <img src="./Pictures/Data_Village_LOGO.jpg" alt="img" width = "30%" />
+
+### [개인 스터디](./Study/)
+
