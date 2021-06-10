@@ -9,17 +9,14 @@
 ### 프로젝트 수행 목록
 ---
 
-#### [Cookit](./Projects/Cookit)
+#### Cookit
 
-<img src="./Pictures/COOK_IT_LOGO.jpg" alt="img" width = "20%" />
+<a href="./Projects/Cookit"><img src="./Pictures/COOK_IT_LOGO.jpg" alt="img" width = "20%" /></a>
 
-#### [BOORM_E](./Projects/BOORM_E)
+#### BOORM_E
 
-<img src="./Pictures/BOORM_E_LOGO.png" alt="img" width = "20%" />
+<a href="./Projects/BOORM_E"><img src="./Pictures/BOORM_E_LOGO.png" alt="img" width = "20%" /></a>
 
-#### [Data_Village](./Projects/Data_Village)
+#### Data_Village
 
-<img src="./Pictures/Data_Village_LOGO.jpg" alt="img" width = "30%" />
-
-
-
+<a href="./Projects/Data_Village"><img src="./Pictures/Data_Village_LOGO.jpg" alt="img" width = "30%" /></a>
