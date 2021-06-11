@@ -166,8 +166,10 @@ li {
   font-size: var(--font-small);
 }
 .main .footer span {
+  height: 1rem;
   display: flex;
   align-items: center;
+  margin-top: 0.3rem;
 }
 .main .footer .clear-completed {
   z-index: 1;
@@ -183,6 +185,7 @@ li {
   box-sizing: border-box;
   z-index: 0;
 }
+
 .main .footer .filters > button {
   color: var(--dark-gray);
   font-size: var(--font-small);
@@ -195,7 +198,9 @@ li {
   border: 1px solid black;
   box-sizing: border-box;
 }
-
+.main .footer .filters .selected-option {
+  border: 1px solid black;
+}
 @media screen and (max-width: 730px) {
   .todo-app > .main > .input input[type="text"] {
     font-size: var(--font-small);
@@ -205,6 +210,7 @@ li {
     height: 5rem;
   }
   .main .footer span {
+    margin-top: 0;
     display: flex;
     align-items: flex-start;
   }
