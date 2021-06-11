@@ -1,6 +1,17 @@
 :root {
+  /* color */
   --font-color-header: #c8e6c9;
+  --shadow-gray: #e6e6e6;
+  --white-gray: #f5f5f5;
+  --dark-gray: #656565;
+  /* space */
+  --base-space: 1.1rem;
+  /* font-size */
+  --font-header: 100px;
+  --font-medium: 1.5rem;
+  --font-samll: 1.2rem;
 }
+
 html,
 body {
   margin: 0;
@@ -9,15 +20,23 @@ body {
 button {
   background: none;
   border: none;
+  cursor: pointer;
 }
 input {
   border: none;
 }
+input:focus {
+  outline: none;
+}
+li {
+  list-style: none;
+}
+
 .todo-app {
   margin: 0 auto;
   width: 100vw;
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color: var(--white-gray);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +46,7 @@ input {
   height: 20%;
 }
 .todo-app > .header > h1 {
-  font-size: 100px;
+  font-size: var(--font-header);
   color: var(--font-color-header);
   font-weight: 100;
   text-align: center;
@@ -37,15 +56,16 @@ input {
 .todo-app > .main {
   /* 속성 */
   width: 60%;
-  height: 40%;
+  min-width: 220px;
+  max-width: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   /* style */
   background-color: white;
-  border-top: 1px solid #e6e6e6;
-  box-shadow: 2px 2px 3px 2px #e6e6e6;
+  border-top: 1px solid var(--shadow-gray);
+  box-shadow: 0px 2px 3px 2px var(--shadow-gray);
 }
 
 .todo-app > .main > .input {
@@ -53,22 +73,99 @@ input {
   height: 3em;
   display: flex;
   position: relative;
-  justify-content: center;
-  padding: 1%;
+
+  align-items: center;
+  box-sizing: border-box;
+  padding: var(--base-space);
+  border-bottom: 1px solid var(--shadow-gray);
 }
+
 .todo-app > .main > .input button {
   width: 10%;
-  position: absolute;
-  left: 0;
-
-  font-size: 2.5em;
+  left: 2%;
+  font-size: var(--font-medium);
   align-items: center;
   text-align: center;
+  position: absolute;
 }
 .todo-app > .main > .input input {
   width: 90%;
-  position: absolute;
-  left: 10%;
-  font-size: 2.5em;
+  height: 2rem;
+  margin-left: 10%;
+  font-size: var(--font-medium);
   padding: 0;
+}
+
+.todo-app > .main > .items {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px -1px 3px 1px var(--shadow-gray);
+}
+.todo-app > .main > .items > .item {
+  border: 1px solid var(--shadow-gray);
+}
+
+.item {
+  padding: var(--base-space);
+  font-size: var(--font-medium);
+  display: flex;
+  align-items: center;
+}
+
+.item > input {
+  display: none;
+}
+.item > input[type="checkbox"] + .toggle {
+  width: var(--font-medium);
+  height: var(--font-medium);
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: white;
+  display: inline-block;
+  position: absolute;
+}
+.item > input[type="checkbox"]:checked + .toggle {
+  width: var(--font-medium);
+  height: var(--font-medium);
+  cursor: pointer;
+  border: 1px solid #c25fdc;
+  border-radius: 50%;
+  background: url(./img/check.png) var(--white-gray) no-repeat center/30px 30px;
+  display: inline-block;
+  position: absolute;
+}
+.item > span {
+  width: 80%;
+  padding-left: calc(var(--font-medium) + var(--base-space));
+}
+.item > .delete {
+  font-size: var(--font-medium);
+  margin: 0 auto;
+}
+
+.main .footer {
+  position: relative;
+  width: 100%;
+  padding: var(--base-space);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  color: var(--dark-gray);
+  font-size: var(--font-small);
+}
+
+.main .footer .todo-count {
+}
+.main .footer .filters {
+  position: absolute;
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.main .footer .filters > button {
+  color: var(--dark-gray);
+  font-size: var(--font-small);
 }

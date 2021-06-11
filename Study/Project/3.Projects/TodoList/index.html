@@ -31,30 +31,48 @@
             autofocus
           />
         </div>
+        <!-- list -->
         <div class="items">
           <li class="item">
-            <input type="checkbox" class="toggle" />
-            <span>밥 먹기</span>
-            <button class="delete"></button>
+            <input type="checkbox" id="1" />
+            <label for="1" class="toggle"></label>
+            <span
+              >밥 먹기밥 먹기밥 먹기밥 먹기밥 먹기밥 먹기밥 먹기밥 먹기밥 먹기밥
+              먹기</span
+            >
+            <button class="delete hover"><i class="fas fa-times"></i></button>
           </li>
           <li class="item">
-            <input type="checkbox" class="toggle" />
+            <input type="checkbox" id="2" />
+            <label for="2" class="toggle"></label>
             <span>밥 먹기</span>
-            <button class="delete">X</button>
+            <button class="delete"><i class="fas fa-times"></i></button>
           </li>
           <li class="item">
-            <input type="checkbox" class="toggle" />
+            <input type="checkbox" id="3" />
+            <label for="3" class="toggle"></label>
             <span>밥 먹기</span>
-            <button class="delete">X</button>
+            <button class="delete"><i class="fas fa-times"></i></button>
           </li>
           <li class="item">
-            <input type="checkbox" class="toggle" />
+            <input type="checkbox" id="4" />
+            <label for="4" class="toggle"></label>
             <span>밥 먹기</span>
-            <button class="delete">X</button>
+            <button class="delete"><i class="fas fa-times"></i></button>
           </li>
         </div>
+
+        <!-- footer -->
+        <div class="footer">
+          <span class="todo-count">4 items left</span>
+          <div class="filters">
+            <button class="all">All</button>
+            <button class="active">Active</button>
+            <button class="completed">Completed</button>
+          </div>
+          <span class="clear-completed">Clear-completed</span>
+        </div>
       </section>
-      <!-- footer -->
     </div>
   </body>
 </html>
