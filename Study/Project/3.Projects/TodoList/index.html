@@ -4,41 +4,57 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todolist</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js" defer></script>
-    <!-- jquery -->
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4f51fc199c.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <section class="todoapp">
-      <header class="header">
-        <h1>todos</h1>
-        <input
-          type="text"
-          class="new-todo"
-          placeholder="What needs to be done?"
-          autofocus
-        />
-      </header>
-      <section class="main">
-        <input type="checkbox" class="toggle-all" id="toggle-all" />
-        <label for="toggle-all">Mark all as complete</label>
-        <ul class="todo-list"></ul>
+    <div class="todo-app">
+      <!-- header -->
+      <section class="header">
+        <h1>Todo List</h1>
       </section>
-      <footer class="footer">
-        <span class="todo-count"></span>
-        <ul class="filters">
-          <li><a href="#/" class="selected">All</a></li>
-          <li><a href="#/active">Active</a></li>
-          <li><a href="#completed/">Complted</a></li>
-        </ul>
-        <button class="clear-complted">Clear completed</button>
-      </footer>
-    </section>
-
-    <footer class="info">
-      <p>Double-click to edit a todo</p>
-    </footer>
+      <!-- main -->
+      <section class="main">
+        <!-- input -->
+        <div class="input">
+          <button class="toggle-all">
+            <i class="fas fa-check"></i>
+          </button>
+          <input
+            type="text"
+            class="new-todo"
+            placeholder="새로운 할 일을 추가해보세요!"
+            autofocus
+          />
+        </div>
+        <div class="items">
+          <li class="item">
+            <input type="checkbox" class="toggle" />
+            <span>밥 먹기</span>
+            <button class="delete"></button>
+          </li>
+          <li class="item">
+            <input type="checkbox" class="toggle" />
+            <span>밥 먹기</span>
+            <button class="delete">X</button>
+          </li>
+          <li class="item">
+            <input type="checkbox" class="toggle" />
+            <span>밥 먹기</span>
+            <button class="delete">X</button>
+          </li>
+          <li class="item">
+            <input type="checkbox" class="toggle" />
+            <span>밥 먹기</span>
+            <button class="delete">X</button>
+          </li>
+        </div>
+      </section>
+      <!-- footer -->
+    </div>
   </body>
 </html>
