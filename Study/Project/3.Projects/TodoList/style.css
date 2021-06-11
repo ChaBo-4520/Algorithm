@@ -57,7 +57,7 @@ li {
 .todo-app > .main {
   /* 속성 */
   width: 60%;
-  min-width: 250px;
+  min-width: 350px;
   max-width: 550px;
   display: flex;
   flex-direction: column;
@@ -71,7 +71,7 @@ li {
 
 .todo-app > .main > .input {
   width: 100%;
-  height: 3em;
+  height: 4em;
   display: flex;
   position: relative;
 
@@ -81,22 +81,32 @@ li {
   border-bottom: 1px solid var(--shadow-gray);
 }
 
-.todo-app > .main > .input button {
-  width: 10%;
-  left: 2%;
+.todo-app > .main > .input > button {
   font-size: var(--font-medium);
   align-items: center;
   text-align: center;
+}
+.todo-app > .main > .input .toggle-all {
+  width: 10%;
+  min-width: 40px;
+  left: 1rem;
   position: absolute;
 }
-.todo-app > .main > .input input {
-  width: 90%;
+.todo-app > .main > .input .new-todo {
+  width: 80%;
   height: 2rem;
-  margin-left: 10%;
+  margin-left: 3.5rem;
   font-size: var(--font-medium);
   padding: 0;
 }
 
+#delete-text {
+  width: 10%;
+  min-width: 40px;
+  right: 1rem;
+  position: absolute;
+  display: block;
+}
 .todo-app > .main > .items {
   width: 100%;
   box-shadow: 0px -1px 3px 1px var(--shadow-gray);
@@ -155,14 +165,13 @@ li {
   color: var(--dark-gray);
   font-size: var(--font-small);
 }
-.main .footer > span {
+.main .footer span {
   display: flex;
   align-items: center;
 }
 .main .footer .clear-completed {
-  display: flex;
-  align-items: center;
   z-index: 1;
+  cursor: pointer;
 }
 .main .footer .filters {
   width: 100%;
@@ -195,7 +204,7 @@ li {
   .main .footer {
     height: 5rem;
   }
-  .main .footer > span {
+  .main .footer span {
     display: flex;
     align-items: flex-start;
   }

@@ -10,6 +10,7 @@
       src="https://kit.fontawesome.com/4f51fc199c.js"
       crossorigin="anonymous"
     ></script>
+    <script src="main.js" defer></script>
   </head>
   <body>
     <div class="todo-app">
@@ -30,49 +31,24 @@
             placeholder="새로운 할 일을 추가해보세요!"
             autofocus
           />
+          <button id="delete-text">
+            <i class="fas fa-times"></i>
+          </button>
         </div>
         <!-- list -->
-        <div class="items">
-          <li class="item">
-            <input type="checkbox" id="1" />
-            <label for="1" class="toggle"></label>
-            <span
-              >밥 먹기밥 먹기밥 먹기밥 먹기밥 먹기밥 먹기밥 먹기밥 먹기밥 먹기밥
-              먹기</span
-            >
-            <button class="delete hover"><i class="fas fa-times"></i></button>
-          </li>
-          <li class="item">
-            <input type="checkbox" id="2" />
-            <label for="2" class="toggle"></label>
-            <span>밥 먹기</span>
-            <button class="delete"><i class="fas fa-times"></i></button>
-          </li>
-          <li class="item">
-            <input type="checkbox" id="3" />
-            <label for="3" class="toggle"></label>
-            <span>밥 먹기</span>
-            <button class="delete"><i class="fas fa-times"></i></button>
-          </li>
-          <li class="item">
-            <input type="checkbox" id="4" />
-            <label for="4" class="toggle"></label>
-            <span>밥 먹기</span>
-            <button class="delete"><i class="fas fa-times"></i></button>
-          </li>
-        </div>
+        <div class="items"></div>
 
         <!-- footer -->
         <div class="footer">
-          <span class="todo-count">4 items left</span>
+          <span class="todo-count"
+            ><strong class="counting">0</strong> items left</span
+          >
           <div class="filters">
             <button class="all">All</button>
             <button class="active">Active</button>
             <button class="completed">Completed</button>
           </div>
-          <div class="clear-completed">
-            <span style="cursor: pointer">Clear-completed</span>
-          </div>
+          <span class="clear-completed">Clear-completed</span>
         </div>
       </section>
     </div>
