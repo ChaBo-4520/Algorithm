@@ -4,8 +4,12 @@ var id_count = 1;
 function Add_EventListeners() {
   input_text.addEventListener("keyup", enterkey);
   input_text.addEventListener("keyup", onFocus);
-  list.addEventListener("click", Delete_item);
+  const clear_complete = document.querySelector(".clear-completed");
+  clear_complete.addEventListener("click", clearComplete);
 }
+
+// About Input
+
 // text input이 포커스 됏을 때,
 function onFocus() {
   if (input_text.value != "") {
@@ -33,8 +37,10 @@ function deleteTextInput() {
 }
 // todo-list에 아이템을 추가하는 함수
 function Add_item(text) {
+  // list에 추가할 li 생성 과정
   var temp = document.createElement("li");
   temp.setAttribute("class", "item");
+  temp.setAttribute("id", `itemWrapper${id_count}`);
   temp.innerHTML = `
   <input type="checkbox" id="item${id_count}" />
   <label for="item${id_count}" class="toggle"></label>
@@ -42,12 +48,30 @@ function Add_item(text) {
   <button class="delete"><i class="fas fa-times"></i></button>
   `;
   list.appendChild(temp);
+
+  // li를 이용해 7번째 child인 버튼에 이벤트 추가
+  document
+    .querySelector(`#itemWrapper${id_count}`)
+    .childNodes[7].addEventListener("click", DeleteItem);
   id_count++;
 }
 
-function Delete_item(event) {
-  console.log(event);
+// About List
+
+// 목록에서 item을 지우는 함수
+function DeleteItem(event) {
+  list.removeChild(event.target.parentNode.parentNode);
 }
+// About Footer
+function clearComplete() {
+  console.log(list.childNodes);
+  for (let a = list.childNodes.length - 1; a >= 0; a--) {
+    if (list.childNodes[a].childNodes[1].checked == true) {
+      list.removeChild(list.childNodes[a]);
+    }
+  }
+}
+// About Define
 const input_text = document.querySelector(".new-todo");
 const list = document.querySelector(".items");
 Add_EventListeners();
