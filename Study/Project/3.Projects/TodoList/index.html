@@ -36,7 +36,20 @@
           </button>
         </div>
         <!-- list -->
-        <div class="items"></div>
+        <div class="items">
+          <li class="item" id="itemWrapper12">
+            <input type="checkbox" id="item${id_count}" />
+            <label for="item${id_count}" class="toggle"></label>
+            <span>체크안됨</span>
+            <button class="delete"><i class="fas fa-times"></i></button>
+          </li>
+          <li class="item" id="itemWrapper12">
+            <input type="checkbox" id="item${id_count}" checked />
+            <label for="item${id_count}" class="toggle"></label>
+            <span>체크됨</span>
+            <button class="delete"><i class="fas fa-times"></i></button>
+          </li>
+        </div>
 
         <!-- footer -->
         <div class="footer">

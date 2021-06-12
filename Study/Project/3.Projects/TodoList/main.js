@@ -11,7 +11,7 @@ function Add_EventListeners() {
 
 // About Input
 // =============================================
-// text input이 포커스 됏을 때,
+// text input이 포커스 됐을 때,
 function onFocus() {
   if (input_text.value != "") {
     document.getElementById("clear-text").style.display = "block";
@@ -54,7 +54,17 @@ function Add_item(text) {
   document
     .querySelector(`#itemWrapper${id_count}`)
     .childNodes[7].addEventListener("click", DeleteItem);
+  document
+    .querySelector(`#itemWrapper${id_count} > #item${id_count}`)
+    .addEventListener("click", clickCheckBox);
   id_count++;
+}
+
+// 체크박스를 클릭했을 때,
+function clickCheckBox(event) {
+  if (event.target.checked) {
+  } else {
+  }
 }
 
 // About List
@@ -62,6 +72,41 @@ function Add_item(text) {
 // 목록에서 item을 지우는 함수
 function DeleteItem(event) {
   list.removeChild(event.target.parentNode.parentNode);
+}
+
+// 리스트에 보여질 item을 결정하는 함수
+function displayItems(option) {
+  // 필터적용
+  const checkbox = document.querySelectorAll(".items > .item > input");
+  const li = document.querySelectorAll(".items > .item");
+  let option_state;
+  switch (option) {
+    case "all":
+      option_state = 0;
+      break;
+    case "active":
+      option_state = 1;
+      break;
+    case "completed":
+      option_state = 2;
+      break;
+  }
+
+  for (let i = 0; i < checkbox.length; i++) {
+    if (option_state == 0) {
+      // All
+      li[i].style.display = "flex";
+    } else if (option_state == 1) {
+      // Active
+      if (!checkbox[i].checked) {
+        li[i].style.display = "flex";
+      } else li[i].style.display = "none";
+    } else {
+      if (checkbox[i].checked) {
+        li[i].style.display = "flex";
+      } else li[i].style.display = "none";
+    }
+  }
 }
 // About Footer
 // =============================================
@@ -82,7 +127,7 @@ function selectOption(event) {
   const key = event.target.dataset.key;
   const option = event.target.dataset.value;
   if (key == null || option == null) return;
-
+  // 수정!!!!!!! 추후에 querySelectorAll로 고칠것
   // 선택된 옵션외에는 selected-option 클래스 제거
   for (let i = 0; i < filters.childNodes.length; i++) {
     const child = filters.childNodes[i];
@@ -90,6 +135,23 @@ function selectOption(event) {
     if (child.dataset.value == option) child.classList.add("selected-option");
     else child.classList.remove("selected-option");
   }
+
+  displayItems(option);
+}
+
+function countItems() {
+  activeCount = 0;
+  const checkbox = document.querySelectorAll(".items > .item > input");
+  for (let i = 0; i < checkbox.length; i++) {
+    if (checkbox[i].checked) continue;
+    else activeCount++;
+  }
+  const todoCount = document.querySelector(".todo-count");
+  todoCount.removeChild(document.querySelector(".counting"));
+  const temp = document.createElement("strong");
+  temp.setAttribute("class", "counting");
+  temp.innerHTML = `${activeCount}`;
+  todoCount.prepend(temp);
 }
 // About Define
 // =============================================
@@ -101,14 +163,10 @@ Add_EventListeners();
 // list 변화 감지
 // 감지대상
 const target = document.querySelector(".items");
+let activeCount = 0;
 // 감지시 동작
 const observer = new MutationObserver((mutations) => {
-  const todoCount = document.querySelector(".todo-count");
-  todoCount.removeChild(document.querySelector(".counting"));
-  const temp = document.createElement("strong");
-  temp.setAttribute("class", "counting");
-  temp.innerHTML = `${mutations[0].target.childNodes.length}`;
-  todoCount.prepend(temp);
+  countItems();
 });
 // observer 옵션
 const option = {
