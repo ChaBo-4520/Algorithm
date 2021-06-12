@@ -7,21 +7,22 @@ function Add_EventListeners() {
   const clear_complete = document.querySelector(".clear-completed");
   clear_complete.addEventListener("click", clearComplete);
   filters.addEventListener("click", selectOption);
-  const toggleComplete = document.querySelector("#toggle-all");
-  toggleComplete.addEventListener("click", test);
-}
-async function test() {
-  countItems();
-  const items = document.querySelectorAll(".items input");
-  console.log(completeCount);
-  for (let a = items.length - 1; a >= 0; a--) {
-    if (completeCount == 0) items[a].checked = true;
-    else items[a].checked = false;
-  }
+  const toggle_complete = document.querySelector("#toggle-all");
+  toggle_complete.addEventListener("click", toggleComplete);
 }
 
 // About Input
 // =============================================
+// complete가 하나라도 있으면 전부 completed표시 해제
+// 아니면 전부 completed표시
+function toggleComplete() {
+  const items = document.querySelectorAll(".items input");
+  for (let a = items.length - 1; a >= 0; a--) {
+    if (completeCount == 0) items[a].checked = true;
+    else items[a].checked = false;
+  }
+  countItems();
+}
 // text input이 포커스 됐을 때,
 function onFocus() {
   if (input_text.value != "") {

@@ -10,12 +10,19 @@
   --font-header: 100px;
   --font-medium: 1.5rem;
   --font-samll: 1.2rem;
+  /* width, height */
+  --outter-min-width: 26.875rem;
+  --inner-max-width: ;
+  --inner-min-width: ;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
+}
+body {
+  background-color: var(--white-gray);
 }
 button {
   background: none;
@@ -32,12 +39,25 @@ li {
   list-style: none;
 }
 
+a {
+  color: none;
+  text-decoration: none;
+}
+a:visited {
+  color: var(--dark-gray);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+p {
+  margin: 0;
+}
 .todo-app {
   margin: 0 auto;
   width: 100vw;
-  min-width: 430px;
+  min-width: var(--inner-max-width);
   height: 100vh;
-  background-color: var(--white-gray);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,6 +193,9 @@ li {
   align-items: center;
   margin-top: 0.3rem;
 }
+.main .footer .counting {
+  margin-right: 0.2rem;
+}
 .main .footer .clear-completed {
   z-index: 1;
   cursor: pointer;
@@ -204,7 +227,16 @@ li {
   border: 1px solid black;
   background-color: var(--white-gray);
 }
-
+/* footer */
+.todo-app > .footer {
+  width: 60%;
+  margin: var(--base-space);
+  padding-bottom: var(--base-space);
+  color: var(--dark-gray);
+  text-align: center;
+  min-width: 350px;
+  max-width: 550px;
+}
 @media screen and (max-width: 800px) {
   .todo-app > .main > .input input[type="text"] {
     font-size: var(--font-small);
