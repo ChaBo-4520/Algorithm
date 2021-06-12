@@ -7,6 +7,17 @@ function Add_EventListeners() {
   const clear_complete = document.querySelector(".clear-completed");
   clear_complete.addEventListener("click", clearComplete);
   filters.addEventListener("click", selectOption);
+  const toggleComplete = document.querySelector("#toggle-all");
+  toggleComplete.addEventListener("click", test);
+}
+async function test() {
+  countItems();
+  const items = document.querySelectorAll(".items input");
+  console.log(completeCount);
+  for (let a = items.length - 1; a >= 0; a--) {
+    if (completeCount == 0) items[a].checked = true;
+    else items[a].checked = false;
+  }
 }
 
 // About Input
@@ -62,6 +73,7 @@ function Add_item(text) {
 
 // 체크박스를 클릭했을 때,
 function clickCheckBox(event) {
+  // 수정!!!! style을 바꾸는 기능 추가
   if (event.target.checked) {
   } else {
   }
@@ -144,9 +156,10 @@ function selectOption(event) {
 // complete를 제외한 task카운팅
 function countItems() {
   activeCount = 0;
+  completeCount = 0;
   const checkbox = document.querySelectorAll(".items > .item > input");
   for (let i = 0; i < checkbox.length; i++) {
-    if (checkbox[i].checked) continue;
+    if (checkbox[i].checked) completeCount++;
     else activeCount++;
   }
   const todoCount = document.querySelector(".todo-count");
@@ -166,7 +179,8 @@ Add_EventListeners();
 // list 변화 감지
 // 감지대상
 const target = document.querySelector(".items");
-let activeCount = 0;
+let activeCount;
+let completeCount;
 // 감지시 동작
 const observer = new MutationObserver((mutations) => {
   countItems();

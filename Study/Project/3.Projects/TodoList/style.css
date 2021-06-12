@@ -87,7 +87,7 @@ li {
   align-items: center;
   text-align: center;
 }
-.todo-app > .main > .input .toggle-all {
+.todo-app > .main > .input #toggle-all {
   width: 10%;
   min-width: 40px;
   left: 1rem;
