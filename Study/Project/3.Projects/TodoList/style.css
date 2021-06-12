@@ -12,8 +12,9 @@
   --font-samll: 1.2rem;
   /* width, height */
   --outter-min-width: 26.875rem;
-  --inner-max-width: ;
-  --inner-min-width: ;
+  --inner-max-width: 34.375rem;
+  --inner-min-width: 21.875rem;
+  --response-width: 50rem;
 }
 
 html,
@@ -56,7 +57,7 @@ p {
 .todo-app {
   margin: 0 auto;
   width: 100vw;
-  min-width: var(--inner-max-width);
+  min-width: var(--outter-min-width);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -70,7 +71,7 @@ p {
   font-size: var(--font-header);
   color: var(--font-color-header);
   font-weight: 100;
-  min-width: 420px;
+  min-width: var(--outter-min-width);
   text-align: center;
   margin: 0;
   padding: 0;
@@ -78,8 +79,8 @@ p {
 .todo-app > .main {
   /* 속성 */
   width: 60%;
-  min-width: 350px;
-  max-width: 550px;
+  min-width: var(--inner-min-width);
+  max-width: var(--inner-max-width);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -234,10 +235,10 @@ p {
   padding-bottom: var(--base-space);
   color: var(--dark-gray);
   text-align: center;
-  min-width: 350px;
-  max-width: 550px;
+  min-width: var(--inner-min-width);
+  max-width: var(--inner-max-width);
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 50rem) {
   .todo-app > .main > .input input[type="text"] {
     font-size: var(--font-small);
   }
