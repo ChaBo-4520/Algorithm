@@ -65,6 +65,7 @@ function clickCheckBox(event) {
   if (event.target.checked) {
   } else {
   }
+  countItems();
 }
 
 // About List
@@ -114,9 +115,10 @@ function displayItems(option) {
 // 클리어된 todo를 지우는 함수
 function clearComplete() {
   if (confirm("완료된 항목을 지우시겠습니까?")) {
-    for (let a = list.childNodes.length - 1; a >= 0; a--) {
-      if (list.childNodes[a].childNodes[1].checked == true) {
-        list.removeChild(list.childNodes[a]);
+    const items = document.querySelectorAll(".items input");
+    for (let a = items.length - 1; a >= 0; a--) {
+      if (items[a].checked == true) {
+        list.removeChild(items[a].parentNode);
       }
     }
   }
@@ -139,6 +141,7 @@ function selectOption(event) {
   displayItems(option);
 }
 
+// complete를 제외한 task카운팅
 function countItems() {
   activeCount = 0;
   const checkbox = document.querySelectorAll(".items > .item > input");
