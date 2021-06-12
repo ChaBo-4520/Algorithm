@@ -31,7 +31,7 @@
             placeholder="새로운 할 일을 추가해보세요!"
             autofocus
           />
-          <button id="delete-text">
+          <button id="clear-text">
             <i class="fas fa-times"></i>
           </button>
         </div>
@@ -44,9 +44,19 @@
             ><strong class="counting">0</strong> items left</span
           >
           <div class="filters">
-            <button class="all selected-option">All</button>
-            <button class="active">Active</button>
-            <button class="completed">Completed</button>
+            <button
+              class="all selected-option"
+              data-key="option"
+              data-value="all"
+            >
+              All
+            </button>
+            <button class="active" data-key="option" data-value="active">
+              Active
+            </button>
+            <button class="completed" data-key="option" data-value="completed">
+              Completed
+            </button>
           </div>
           <span class="clear-completed">Clear-completed</span>
         </div>

@@ -6,19 +6,20 @@ function Add_EventListeners() {
   input_text.addEventListener("keyup", onFocus);
   const clear_complete = document.querySelector(".clear-completed");
   clear_complete.addEventListener("click", clearComplete);
+  filters.addEventListener("click", selectOption);
 }
 
 // About Input
-
+// =============================================
 // text input이 포커스 됏을 때,
 function onFocus() {
   if (input_text.value != "") {
-    document.getElementById("delete-text").style.display = "block";
-    const deleteBtn = document.querySelector("#delete-text");
+    document.getElementById("clear-text").style.display = "block";
+    const deleteBtn = document.querySelector("#clear-text");
     deleteBtn.addEventListener("click", deleteTextInput);
     return true;
   } else {
-    document.getElementById("delete-text").style.display = "none";
+    document.getElementById("clear-text").style.display = "none";
     return false;
   }
 }
@@ -31,7 +32,7 @@ function enterkey(event) {
     deleteTextInput();
   }
 }
-// delete-text버튼을 눌렀을 때
+// clear-text버튼을 눌렀을 때
 function deleteTextInput() {
   input_text.value = "";
 }
@@ -57,23 +58,44 @@ function Add_item(text) {
 }
 
 // About List
-
+// =============================================
 // 목록에서 item을 지우는 함수
 function DeleteItem(event) {
   list.removeChild(event.target.parentNode.parentNode);
 }
 // About Footer
+// =============================================
+
+// 클리어된 todo를 지우는 함수
 function clearComplete() {
-  console.log(list.childNodes);
-  for (let a = list.childNodes.length - 1; a >= 0; a--) {
-    if (list.childNodes[a].childNodes[1].checked == true) {
-      list.removeChild(list.childNodes[a]);
+  if (confirm("완료된 항목을 지우시겠습니까?")) {
+    for (let a = list.childNodes.length - 1; a >= 0; a--) {
+      if (list.childNodes[a].childNodes[1].checked == true) {
+        list.removeChild(list.childNodes[a]);
+      }
     }
   }
 }
+
+// 옵션 선택시 하나의 옵션만 선택되도록 함
+function selectOption(event) {
+  const key = event.target.dataset.key;
+  const option = event.target.dataset.value;
+  if (key == null || option == null) return;
+
+  // 선택된 옵션외에는 selected-option 클래스 제거
+  for (let i = 0; i < filters.childNodes.length; i++) {
+    const child = filters.childNodes[i];
+    if (child.dataset == null) continue;
+    if (child.dataset.value == option) child.classList.add("selected-option");
+    else child.classList.remove("selected-option");
+  }
+}
 // About Define
+// =============================================
 const input_text = document.querySelector(".new-todo");
 const list = document.querySelector(".items");
+const filters = document.querySelector(".filters");
 Add_EventListeners();
 
 // list 변화 감지

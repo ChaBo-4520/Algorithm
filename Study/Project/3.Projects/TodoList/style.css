@@ -35,6 +35,7 @@ li {
 .todo-app {
   margin: 0 auto;
   width: 100vw;
+  min-width: 430px;
   height: 100vh;
   background-color: var(--white-gray);
   display: flex;
@@ -100,12 +101,13 @@ li {
   padding: 0;
 }
 
-#delete-text {
+#clear-text {
   width: 10%;
   min-width: 40px;
   right: 1rem;
   position: absolute;
-  display: block;
+  display: none;
+  color: var(--shadow-gray);
 }
 .todo-app > .main > .items {
   width: 100%;
@@ -200,8 +202,9 @@ li {
 }
 .main .footer .filters .selected-option {
   border: 1px solid black;
+  background-color: var(--white-gray);
 }
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 800px) {
   .todo-app > .main > .input input[type="text"] {
     font-size: var(--font-small);
   }
