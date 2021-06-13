@@ -6,8 +6,6 @@
 
 <img src="img/main.jpg">
 
-
-
 ## 목표
 
 > HTML, CSS, Javascript를 이용하여 ToDoList를 만들어보자
@@ -36,6 +34,12 @@
    - Completed : 완료된 목록을 볼 수 있습니다.
 4. **기타**
    - 우측하단의 Clear-completed버튼을 클릭하면 목록 중 완료된 목록 전체를 List에서 삭제할 수 있습니다.
+
+## 업데이트 사항
+
+- **2021.06.13**
+
+  - 헤더와 목록의 font-style을 Google font의 [Roboto](https://fonts.google.com/specimen/Roboto)로 변경 완료
 
 ## 추가 예정
 
